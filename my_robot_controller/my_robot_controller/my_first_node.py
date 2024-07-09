@@ -12,10 +12,12 @@ class MyNode(Node): # MyNode inherits from Node in rclpy.node.
         # Node name: "first_node". This is used to run the node.
         # Note that the node name is different from the file name.
 
+        self.counter_ = 0
         self.create_timer(1.0, self.timer_callback)
 
     def timer_callback(self):
-        self.get_logger().info("Hello")
+        self.get_logger().info("Anduril " + str(self.counter_) )
+        self.counter_ += 1
 
 
 def main(args=None):  # To install with ROS2.
