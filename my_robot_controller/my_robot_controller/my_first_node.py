@@ -28,6 +28,6 @@ def main(args=None):  # To install with ROS2.
     rclpy.spin(node) # Keep the node alive. 
 
     rclpy.shutdown() # Shutdown ROS2 communications.
-
+ 
 if __name__ == '__main__':  # To execute directly from the terminal.
     main()
