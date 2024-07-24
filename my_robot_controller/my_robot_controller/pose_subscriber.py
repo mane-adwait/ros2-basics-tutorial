@@ -8,7 +8,7 @@ class PoseSubscriberNode(Node):
     def __init__(self):
         super().__init__("pose_subscriber")
         self.pose_subscriber_ = self.create_subscription(
-             Pose, "/turtle1/pose", self.pose_callback, 10)
+             Pose, "/turtle1/pose", self.pose_callback, 10) # Create a subscriber to the /turtle1/pose topic.
         
     def pose_callback(self, msg: Pose):
         self.get_logger().info(str(msg))
