@@ -13,7 +13,7 @@ class MyNode(Node): # MyNode inherits from Node in rclpy.node.
         # Note that the node name is different from the file name.
 
         self.counter_ = 0
-        self.create_timer(1.0, self.timer_callback)
+        self.create_timer(1.0, self.timer_callback) # (timer_period, callback_function)
 
     def timer_callback(self):
         self.get_logger().info("Anduril " + str(self.counter_) )

@@ -26,3 +26,5 @@ setup(
         ],
     },
 )
+
+# "executable_name = package_name.file_name:function_name"
