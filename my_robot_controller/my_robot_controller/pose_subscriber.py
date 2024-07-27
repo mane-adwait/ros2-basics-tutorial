@@ -8,7 +8,7 @@ class PoseSubscriberNode(Node):
     def __init__(self):
         super().__init__("pose_subscriber") # Node name: "pose_subscriber".
         # The callback function is called whenever the subscriber receives a message.
-        # (msg_type, topic_name, callback_function, qos_profile_depth)
+        # create_subscription(msg_type, topic_name, callback_function, qos_profile_depth)
         self.pose_subscriber_ = self.create_subscription(
              Pose, "/turtle1/pose", self.pose_callback, 10) 
         
