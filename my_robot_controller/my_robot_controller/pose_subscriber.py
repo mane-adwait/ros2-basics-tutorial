@@ -8,12 +8,14 @@ class PoseSubscriberNode(Node):
     def __init__(self):
         super().__init__("pose_subscriber") # Node name: "pose_subscriber".
         # The callback function is called whenever the subscriber receives a message.
+        # (msg_type, topic_name, callback_function, qos_profile_depth)
         self.pose_subscriber_ = self.create_subscription(
-             Pose, "/turtle1/pose", self.pose_callback, 10) # (msg_type, topic_name, callback_function, qos_profile_depth)
+             Pose, "/turtle1/pose", self.pose_callback, 10) 
         
         
     def pose_callback(self, msg: Pose):
-        self.get_logger().info(str(msg))
+        self.get_logger().info( 
+             "Pose = (" + str(msg.x) + ", " + str(msg.y) + ", " + str(msg.theta) + ")" )
 
 def main(args=None):
         rclpy.init(args=args) # Initialize ROS2 communications.

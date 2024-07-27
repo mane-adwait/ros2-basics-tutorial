@@ -29,5 +29,5 @@ def main(args=None):  # To install with ROS2.
 
     rclpy.shutdown() # Shutdown ROS2 communications.
  
-if __name__ == '__main__':  # To execute directly from the terminal.
+if __name__ == '__main__':  # To execute as a Python script instead of an executable.
     main()
