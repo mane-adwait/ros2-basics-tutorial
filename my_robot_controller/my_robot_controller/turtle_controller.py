@@ -11,8 +11,9 @@ class TurtleControllerNode(Node):
         super().__init__("turtle_controller")
         self.cmd_vel_publisher_ = self.create_publisher(
             Twist, "/turtle1/cmd_vel", 10)
+        # create_subscription(msg_type, topic_name, callback_function, qos_profile_depth)
         self.pose_subscriber_ = self.create_subscription(
-            Pose, "/turtle1/pose", self.pose_callback, 10) # create_subscription(msg_type, topic_name, callback_function, qos_profile_depth)
+            Pose, "/turtle1/pose", self.pose_callback, 10)
         self.get_logger().info("Turtle Controller Node has been started")
 
     def pose_callback(self, pose: Pose):
