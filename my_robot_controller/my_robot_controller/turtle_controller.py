@@ -12,7 +12,7 @@ class TurtleControllerNode(Node):
         self.cmd_vel_publisher_ = self.create_publisher(
             Twist, "/turtle1/cmd_vel", 10)
         self.pose_subscriber_ = self.create_subscription(
-            Pose, "/turtle1/pose", self.pose_callback, 10)
+            Pose, "/turtle1/pose", self.pose_callback, 10) # create_subscription(msg_type, topic_name, callback_function, qos_profile_depth)
         self.get_logger().info("Turtle Controller Node has been started")
 
     def pose_callback(self, pose: Pose):
