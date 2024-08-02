@@ -1,4 +1,9 @@
-    def create_subscription(
+# Source: 
+# https://github.com/ros2/rclpy
+# rclpy/rclpy/rclpy/node.py
+# Line 1579-1655
+
+def create_subscription(
         self,
         msg_type: Type[MsgT],
         topic: str,
